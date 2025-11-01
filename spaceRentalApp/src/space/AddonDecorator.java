@@ -7,19 +7,12 @@ import pattern.SpaceComponent;
  * 부가 서비스를 추가하기 위한 추상 데코레이터 클래스
  */
 public abstract class AddonDecorator implements SpaceComponent {
-    protected SpaceComponent wrappee;
+    protected final SpaceComponent delegate;
 
-    public AddonDecorator(SpaceComponent spaceComponent) {
-        this.wrappee = spaceComponent;
+    protected AddonDecorator(SpaceComponent delegate) {
+        this.delegate = delegate;
     }
 
-    @Override
-    public String getDescription() {
-        return wrappee.getDescription();
-    }
-
-    @Override
-    public int getCost() {
-        return wrappee.getCost();
-    }
+    @Override public String getId() { return delegate.getId(); } // 동일 공간 식별 유지
 }
+
