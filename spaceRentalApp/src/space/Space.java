@@ -12,19 +12,19 @@ import java.util.ArrayList;
  */
 // space/Space.java
 public class Space implements SpaceComponent {
-    private final String id;
+    private final Long id;
     private final SpaceType type;
     private final SpaceScale scale;
     private final List<UnitSpace> units;  
     private final List<SecuritySystem> securities;
     private final String name;   // 예: "강남 회의실 A"
 
-    public Space(String id, String name,
+    public Space(Long id, String name,
                  SpaceType type, SpaceScale scale,
                  List<UnitSpace> units,
                  List<SecuritySystem> securities) 
     {
-        this.id = Objects.requireNonNull(id);
+        this.id = id;
         this.name = Objects.requireNonNull(name);
         this.type = type;
         this.scale = scale;
@@ -33,7 +33,7 @@ public class Space implements SpaceComponent {
     }
 
 
-    @Override public String getId() { return id; }
+    @Override public Long getId() { return id; }
 
     @Override
     public String getDescription() {

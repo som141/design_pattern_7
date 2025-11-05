@@ -7,7 +7,7 @@ public class DefaultSpaceFactory implements SpaceFactory {
 
     @Override
     public Space createSpace(
-        String id,
+        Long id,
         String name,
         SpaceType type,
         SpaceScale scale,
