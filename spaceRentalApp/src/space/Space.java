@@ -18,7 +18,6 @@ public class Space implements SpaceComponent {
     private final List<UnitSpace> units;  
     private final List<SecuritySystem> securities;
     private final String name;   // 예: "강남 회의실 A"
-    private final int baseCost;  // 기본 가격
 
     public Space(String id, String name,
                  SpaceType type, SpaceScale scale,
