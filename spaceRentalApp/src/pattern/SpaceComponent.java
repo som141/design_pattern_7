@@ -7,5 +7,4 @@ package pattern;
 public interface SpaceComponent {
     String getId();
     String getDescription();
-    int getCost();
 }
