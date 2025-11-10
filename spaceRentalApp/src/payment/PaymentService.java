@@ -20,8 +20,7 @@ public class PaymentService {
     private final SpaceRepository spaceRepository;
     private final MemoryUserRepository userRepository;
     public PaymentService(SpaceRepository spaceRepository,
-                          MemoryUserRepository userRepository,
-                          DiscountPolicyFactory policyFactory) {
+                          MemoryUserRepository userRepository) {
         this.spaceRepository = spaceRepository;
         this.userRepository = userRepository;
 
@@ -37,7 +36,7 @@ public class PaymentService {
         return result;
     }
     public BigDecimal previewTotal(Reservation reservation){
-        int period=reservation.getTime().getEnd()-reservation.getTime().getStart()+1;
+        int period=reservation.getTime().getPeriod();// 여기 time State메서드로 수정해줘야함.
         BigDecimal base = previewOnedayTotal(reservation);
         return base.multiply(new BigDecimal(period));
     }
@@ -55,7 +54,7 @@ public class PaymentService {
         return result;
     }
     public BigDecimal previewTotal(Reservation reservation){
-        int period=reservation.getTime().getEnd()-reservation.getTime().getStart()+1;
+        int period=reservation.getTime().getPeriod();// 여기 time State메서드로 수정해줘야함.
         BigDecimal base =OnedayTotal(reservation);
         return base.multiply(new BigDecimal(period));
     }
