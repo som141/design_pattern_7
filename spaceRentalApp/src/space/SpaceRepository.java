@@ -23,7 +23,7 @@ public class SpaceRepository {
         store.put(id, space);
         return id;
     }
-    public Space findById(Long id) { return store.get(id); }
+    public Optional<Space> findById(Long id) { return Optional.of(store.get(id)); }
     public List<Space> findAll() { return new ArrayList<>(store.values()); }
     public void deleteById(Long id) { /* ID로 공간 삭제 로직 */ }
     public boolean updateById(Long id, Space updateSpace) { /* 공간 정보 업데이트 로직 */ return false; }

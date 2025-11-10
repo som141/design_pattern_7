@@ -4,11 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6734c488-08cc-4bdf-b708-4ea5eca64c25" name="Changes" comment="" />
+    <list default="true" id="6734c488-08cc-4bdf-b708-4ea5eca64c25" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/spaceRentalApp/src/space/AddOn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spaceRentalApp/src/space/SpaceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceRentalApp/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceRentalApp/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceRentalApp/src/payment/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceRentalApp/src/payment/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceRentalApp/src/space/Space.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceRentalApp/src/space/Space.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceRentalApp/src/space/SpaceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceRentalApp/src/space/SpaceRepository.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -17,6 +33,9 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="34yHvOK0pUYGetpEjD6RloFLxKq" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -25,7 +44,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/s0302/OneDrive/바탕 화면/design_pattern_7/spaceRentalApp",
+    "last_opened_file_path": "/Users/lee_ych/Desktop/design_pattern_7",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "advanced.settings",
     "vue.rearranger.settings.migration": "true"
@@ -49,7 +72,7 @@
       <updated>1716134496140</updated>
       <workItem from="1762734528433" duration="13000" />
       <workItem from="1762734551204" duration="8000" />
-      <workItem from="1762734578529" duration="71000" />
+      <workItem from="1762745251143" duration="5332000" />
     </task>
     <servers />
   </component>

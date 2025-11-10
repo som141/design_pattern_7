@@ -18,13 +18,12 @@ public class Main {
     public static void main(String[] args) {
         MemoryUserRepository userRepository = new MemoryUserRepository();
         SpaceRepository spaceRepository = new SpaceRepository();
-        DiscountPolicyFactory policyFactory = new DiscountPolicyFactory(); // PaymentService에 필요
 
         UserService userService = new UserService();
         SpaceFactory spaceFactory = new DefaultSpaceFactory();
         ReservationService reservationService = new ReservationService();
         // PaymentService 생성자에 맞게 3개 인자 전달
-        PaymentService paymentService = new PaymentService(spaceRepository, userRepository, policyFactory);
+        PaymentService paymentService = new PaymentService(spaceRepository, userRepository);
 
 
         // testUser 생성
@@ -58,7 +57,7 @@ public class Main {
 
         // reservation 객체를 payment에 넘겨서 가격 책정
         // (1) 할인 전 1일 기본가 (UnitSpace + SpaceType + Scale + Security)
-        BigDecimal previewOneDay = paymentService.previewOnedayTotal(reservation);
+        BigDecimal previewOneDay = paymentService.previewOnedayTotal(testSpace);
         System.out.println("1일 기본가 (할인 전): " + previewOneDay + "원");
 
         // (2) 할인 후 1일 최종가 (기본가에 GOLD 등급 할인 적용)
@@ -66,7 +65,7 @@ public class Main {
         System.out.println("1일 최종가 (GOLD 할인): " + finalOneDay + "원");
 
         // (3) 총 예약 기간 최종가 (PaymentService의 마지막 previewTotal 메서드 사용)
-        BigDecimal finalTotalPrice = paymentService.finalTotal(reservation);
+        BigDecimal finalTotalPrice = paymentService.
         System.out.println("-----------------------------------");
         System.out.println("총 예약 기간 (" + (reservation.getTime().getPeriod() == 0 ? 1 : reservation.getTime().getPeriod()) + "일) 최종 결제 금액: " + finalTotalPrice + "원");
 
