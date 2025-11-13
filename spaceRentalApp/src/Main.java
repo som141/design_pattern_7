@@ -56,6 +56,32 @@ public class Main {
                 startTime,
                 endTime
         );
+        
+        // 결제 수단 테스트용 (CREDIT_CARD)
+        User testUser2 = new User(124L, "456", "형균", "123@", PaymentMethod.CREDIT_CARD, UserGrade.GOLD, true);
+        userService.register(testUser2);
+        Space testSpace2 = spaceFactory.createSpace(2L, "강남 4호점", SpaceType.OFFICE, SpaceScale.MEDIUM,
+                List.of(UnitSpace.MEETING_ROOM, UnitSpace.LOUNGE), List.of(SecuritySystem.CCTV, SecuritySystem.DOOR_LOCK));
+        spaceService.createSpace(testSpace2);
+        testSpace2.SetAddOn(List.of(AddOn.WIFI,AddOn.PROJECTOR));
+        Reservation reservation2 = reservationService.reserve(testUser2.getUserId(), testSpace2.getId(), startTime, endTime);
+        // 결제 수단 테스트용 (BANK_TRANSFER)
+        User testUser3 = new User(125L, "456", "형균", "123@", PaymentMethod.BANK_TRANSFER, UserGrade.GOLD, true);
+        userService.register(testUser3);
+        Space testSpace3 = spaceFactory.createSpace(3L, "강남 5호점", SpaceType.OFFICE, SpaceScale.MEDIUM,
+                List.of(UnitSpace.MEETING_ROOM, UnitSpace.LOUNGE), List.of(SecuritySystem.CCTV, SecuritySystem.DOOR_LOCK));
+        spaceService.createSpace(testSpace3);
+        testSpace3.SetAddOn(List.of(AddOn.WIFI,AddOn.PROJECTOR));
+        Reservation reservation3 = reservationService.reserve(testUser3.getUserId(), testSpace3.getId(), startTime, endTime);
+        // 결제 수단 테스트용 (KAKAO_PAY)
+        User testUser4 = new User(126L, "456", "형균", "123@", PaymentMethod.KAKAO_PAY, UserGrade.GOLD, true);
+        userService.register(testUser4);
+        Space testSpace4 = spaceFactory.createSpace(4L, "강남 6호점", SpaceType.OFFICE, SpaceScale.MEDIUM,
+                List.of(UnitSpace.MEETING_ROOM, UnitSpace.LOUNGE), List.of(SecuritySystem.CCTV, SecuritySystem.DOOR_LOCK));
+        spaceService.createSpace(testSpace4);
+        testSpace4.SetAddOn(List.of(AddOn.WIFI,AddOn.PROJECTOR));
+        Reservation reservation4 = reservationService.reserve(testUser4.getUserId(), testSpace4.getId(), startTime, endTime);
+
 
         // reservation 객체를 payment에 넘겨서 가격 책정
         // (1) 할인 전 1일 기본가 (UnitSpace + SpaceType + Scale + Security)
@@ -70,5 +96,14 @@ public class Main {
         BigDecimal finalTotalPrice = paymentService.Total(reservation);
         System.out.println(finalTotalPrice);
 
+        // 결제 수단별 출력 비교
+        System.out.println("\n-----휴대폰 결제-----");
+        paymentService.pay(reservation);
+        System.out.println("-----신용카드-----");
+        paymentService.pay(reservation2);
+        System.out.println("-----무통장입금-----");
+        paymentService.pay(reservation3);
+        System.out.println("-----카카오페이-----");
+        paymentService.pay(reservation4);
     }
 }

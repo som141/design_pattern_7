@@ -5,6 +5,7 @@ import payment.discount.DiscountPolicyFactory;
 import payment.securitysystempayment.SecurityPaymentFactory;
 import payment.spacescale.ScalePaymentFactory;
 import payment.spacetype.SpaceTypePaymentFactory;
+import payment.strategy.PaymentStrategy;
 import payment.unitspace.UnitSpacePaymentFactory;
 import reservation.Reservation;
 import space.domain.Space;
@@ -47,5 +48,10 @@ public class PaymentService {
         int period=reservation.getTime().getPeriod();// 여기 time State메서드로 수정해줘야함.
         BigDecimal base =OnedayTotal(reservation);
         return base.multiply(new BigDecimal(period));
+    }
+    public void pay(Reservation reservation) {
+        User user = userRepository.findById(reservation.getUserId());
+        PaymentStrategy strategy = user.getPaymentMethod().getStrategy();
+        strategy.pay(this, reservation);
     }
 }
