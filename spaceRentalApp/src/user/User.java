@@ -1,5 +1,7 @@
 package user;
 
+import payment.strategy.PaymentMethod;
+
 /**
  * 사용자 정보를 담는 클래스
  */

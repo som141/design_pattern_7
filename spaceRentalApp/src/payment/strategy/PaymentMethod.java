@@ -1,6 +1,4 @@
-package user;
-
-import payment.strategy.*;
+package payment.strategy;
 
 /**
  * 결제 수단 종류를 나타내는 Enum

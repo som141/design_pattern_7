@@ -1,3 +1,4 @@
+import payment.strategy.PaymentMethod;
 import space.domain.DefaultSpaceFactory;
 import space.domain.SpaceFactory;
 import payment.PaymentService;
@@ -11,7 +12,6 @@ import user.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
